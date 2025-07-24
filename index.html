@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gustave Andreani | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 data-en="Gustave Andreani" data-fr="Gustave Andreani">Gustave Andreani</h1>
+      <nav>
+        <button id="btn-en">EN</button>
+        <button id="btn-fr">FR</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h2 data-en="Crafting digital experiences with clarity & purpose." 
+            data-fr="Créer des expériences numériques claires et efficaces.">
+          Crafting digital experiences with clarity & purpose.
+        </h2>
+        <p data-en="Frontend developer & business student passionate about elegant, intuitive web design." 
+           data-fr="Développeur frontend et étudiant en commerce, passionné par le design web élégant et intuitif.">
+          Frontend developer & business student passionate about elegant, intuitive web design.
+        </p>
+      </div>
+    </section>
+
+    <main>
+      <section class="section">
+        <h3 data-en="About Me" data-fr="À propos de moi">About Me</h3>
+        <div class="card large">
+          <p data-en="I’m currently studying International Business at IESEG (Class of 2028), with a growing portfolio in frontend development. I’m fluent in French and English, and I have a good level in Italian."
+             data-fr="Je suis actuellement étudiant en commerce international à l'IESEG (Promotion 2028), avec un portfolio croissant en développement frontend. Je parle couramment le français et l'anglais, et j'ai un bon niveau d'italien.">
+            I’m currently studying International Business at IESEG (Class of 2028), with a growing portfolio in frontend development. I’m fluent in French and English, and I have a good level in Italian.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 data-en="Skills & Tools" data-fr="Compétences & Outils">Skills & Tools</h3>
+        <div class="carousel-wrapper">
+          <div class="carousel-track">
+            <div class="skill-card" data-en="HTML" data-fr="HTML"><div class="icon">💻</div><p>HTML</p></div>
+            <div class="skill-card" data-en="CSS" data-fr="CSS"><div class="icon">🎨</div><p>CSS</p></div>
+            <div class="skill-card" data-en="JavaScript" data-fr="JavaScript"><div class="icon">⚙️</div><p>JavaScript</p></div>
+            <div class="skill-card" data-en="GitHub" data-fr="GitHub"><div class="icon">🔧</div><p>GitHub</p></div>
+            <div class="skill-card" data-en="WordPress" data-fr="WordPress"><div class="icon">🌐</div><p>WordPress</p></div>
+            <!-- duplicate for carousel loop -->
+            <div class="skill-card" data-en="HTML" data-fr="HTML"><div class="icon">💻</div><p>HTML</p></div>
+            <div class="skill-card" data-en="CSS" data-fr="CSS"><div class="icon">🎨</div><p>CSS</p></div>
+            <div class="skill-card" data-en="JavaScript" data-fr="JavaScript"><div class="icon">⚙️</div><p>JavaScript</p></div>
+            <div class="skill-card" data-en="GitHub" data-fr="GitHub"><div class="icon">🔧</div><p>GitHub</p></div>
+            <div class="skill-card" data-en="WordPress" data-fr="WordPress"><div class="icon">🌐</div><p>WordPress</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 data-en="Certifications" data-fr="Certifications">Certifications</h3>
+        <div class="grid cert-grid">
+          <div class="cert-card" data-en="BFI – EJM" data-fr="BFI – EJM">BFI – EJM</div>
+          <div class="cert-card" data-en="IELTS – 8/9" data-fr="IELTS – 8/9">IELTS – 8/9</div>
+          <div class="cert-card" data-en="Cambridge Certificate" data-fr="Certificat Cambridge">Cambridge Certificate</div>
+          <div class="cert-card" data-en="Le Wagon – IESEG" data-fr="Le Wagon – IESEG">Le Wagon – IESEG</div>
+          <div class="cert-card" data-en="AP Human Geo" data-fr="AP Géographie humaine">AP Human Geo</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 data-en="Project" data-fr="Projet">Project</h3>
+        <div class="card large">
+          <h4 data-en="Portfolio Website" data-fr="Site Portfolio">Portfolio Website</h4>
+          <p data-en="A clean, elegant portfolio built with HTML, CSS, and JavaScript." 
+             data-fr="Un portfolio propre et élégant construit avec HTML, CSS et JavaScript.">
+            A clean, elegant portfolio built with HTML, CSS, and JavaScript.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 data-en="Contact" data-fr="Contact">Contact</h3>
+        <div class="card large">
+          <p>Email: <a href="mailto:gustave.andreani@gmail.com">gustave.andreani@gmail.com</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/gustave-andreani-994357290/" target="_blank">linkedin.com/in/gustave-andreani</a></p>
+          <p>GitHub: <a href="https://github.com/GANDREANI27" target="_blank">github.com/GANDREANI27</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Gustave Andreani</p>
+    </footer>
+  </div>
+
+  <script>
+    function translate(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    }
+
+    document.getElementById("btn-en").onclick = () => translate("en");
+    document.getElementById("btn-fr").onclick = () => translate("fr");
+  </script>
+</body>
+</html>
