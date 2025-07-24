@@ -9,13 +9,14 @@
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
   </style>
 </head>
-<body>
+<body class="light">
   <div class="container">
     <header>
       <h1 data-en="Gustave Andreani" data-fr="Gustave Andreani">Gustave Andreani</h1>
       <nav>
         <button id="btn-en">EN</button>
         <button id="btn-fr">FR</button>
+        <button id="btn-theme">🌞</button>
       </nav>
     </header>
 
@@ -47,17 +48,16 @@
         <h3 data-en="Skills & Tools" data-fr="Compétences & Outils">Skills & Tools</h3>
         <div class="carousel-wrapper">
           <div class="carousel-track">
-            <div class="skill-card" data-en="HTML" data-fr="HTML"><div class="icon">💻</div><p>HTML</p></div>
-            <div class="skill-card" data-en="CSS" data-fr="CSS"><div class="icon">🎨</div><p>CSS</p></div>
-            <div class="skill-card" data-en="JavaScript" data-fr="JavaScript"><div class="icon">⚙️</div><p>JavaScript</p></div>
-            <div class="skill-card" data-en="GitHub" data-fr="GitHub"><div class="icon">🔧</div><p>GitHub</p></div>
-            <div class="skill-card" data-en="WordPress" data-fr="WordPress"><div class="icon">🌐</div><p>WordPress</p></div>
-            <!-- duplicate for carousel loop -->
-            <div class="skill-card" data-en="HTML" data-fr="HTML"><div class="icon">💻</div><p>HTML</p></div>
-            <div class="skill-card" data-en="CSS" data-fr="CSS"><div class="icon">🎨</div><p>CSS</p></div>
-            <div class="skill-card" data-en="JavaScript" data-fr="JavaScript"><div class="icon">⚙️</div><p>JavaScript</p></div>
-            <div class="skill-card" data-en="GitHub" data-fr="GitHub"><div class="icon">🔧</div><p>GitHub</p></div>
-            <div class="skill-card" data-en="WordPress" data-fr="WordPress"><div class="icon">🌐</div><p>WordPress</p></div>
+            <div class="skill-card"><div class="icon">💻</div><p>HTML</p></div>
+            <div class="skill-card"><div class="icon">🎨</div><p>CSS</p></div>
+            <div class="skill-card"><div class="icon">⚙️</div><p>JavaScript</p></div>
+            <div class="skill-card"><div class="icon">🔧</div><p>GitHub</p></div>
+            <div class="skill-card"><div class="icon">🌐</div><p>WordPress</p></div>
+            <div class="skill-card"><div class="icon">💻</div><p>HTML</p></div>
+            <div class="skill-card"><div class="icon">🎨</div><p>CSS</p></div>
+            <div class="skill-card"><div class="icon">⚙️</div><p>JavaScript</p></div>
+            <div class="skill-card"><div class="icon">🔧</div><p>GitHub</p></div>
+            <div class="skill-card"><div class="icon">🌐</div><p>WordPress</p></div>
           </div>
         </div>
       </section>
@@ -70,6 +70,7 @@
           <div class="cert-card" data-en="Cambridge Certificate" data-fr="Certificat Cambridge">Cambridge Certificate</div>
           <div class="cert-card" data-en="Le Wagon – IESEG" data-fr="Le Wagon – IESEG">Le Wagon – IESEG</div>
           <div class="cert-card" data-en="AP Human Geo" data-fr="AP Géographie humaine">AP Human Geo</div>
+          <div class="cert-card" data-en="AP Language and Litterature" data-fr="AP Langage et Littérature">AP Language and Litterature</div>
         </div>
       </section>
 
@@ -100,14 +101,22 @@
   </div>
 
   <script>
-    function translate(lang) {
+    const translate = (lang) => {
       document.querySelectorAll('[data-en]').forEach(el => {
         el.textContent = el.getAttribute(`data-${lang}`);
       });
-    }
+    };
 
-    document.getElementById("btn-en").onclick = () => translate("en");
-    document.getElementById("btn-fr").onclick = () => translate("fr");
+    document.getElementById('btn-en').onclick = () => translate("en");
+    document.getElementById('btn-fr').onclick = () => translate("fr");
+
+    const themeBtn = document.getElementById("btn-theme");
+    const body = document.body;
+
+    themeBtn.onclick = () => {
+      body.classList.toggle("dark");
+      themeBtn.textContent = body.classList.contains("dark") ? "🌙" : "🌞";
+    };
   </script>
 </body>
 </html>
